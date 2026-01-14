@@ -9,31 +9,167 @@
             background-color: #0a0a0a;
             color: #00ff41;
             font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-transform: uppercase;
+            display: flex;<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HexaSec Cyber | Advanced Security Operations</title>
+    <style>
+        :root { --neon: #00ff41; --bg: #050505; --dim-neon: rgba(0, 255, 65, 0.2); }
+        
+        * { box-sizing: border-box; }
+        body { 
+            background: var(--bg); 
+            color: var(--neon); 
+            font-family: 'Courier New', monospace; 
+            margin: 0; 
+            overflow-x: hidden;
+            background-image: linear-gradient(var(--dim-neon) 1px, transparent 1px), 
+                              linear-gradient(90deg, var(--dim-neon) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: backgroundScroll 20s linear infinite;
         }
-        .container {
-            border: 1px solid #00ff41;
-            padding: 40px;
-            box-shadow: 0 0 20px #00ff41;
+
+        @keyframes backgroundScroll {
+            from { background-position: 0 0; }
+            to { background-position: 50px 50px; }
+        }
+
+        .status-bar { 
+            background: var(--neon); 
+            color: #000; 
+            padding: 8px; 
+            text-align: center; 
+            font-size: 0.8rem; 
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .hero { 
+            height: 70vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            border-bottom: 2px solid var(--neon); 
             text-align: center;
+            background: radial-gradient(circle, rgba(0,255,65,0.05) 0%, transparent 70%);
         }
-        h1 { font-size: 2.5rem; letter-spacing: 5px; }
-        p { color: #fff; font-size: 1.2rem; }
-        .status { color: #00ff41; animation: blink 1.5s infinite; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        h1 { font-size: 3.5rem; letter-spacing: 8px; margin: 0; text-shadow: 0 0 15px var(--neon); }
+        .glitch-text { font-size: 1.2rem; margin: 20px 0; border-right: 2px solid var(--neon); padding-right: 5px; animation: blink 1s infinite; }
+        
+        @keyframes blink { 50% { border-color: transparent; } }
+
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        
+        .mission-box {
+            border: 1px solid var(--neon);
+            padding: 30px;
+            margin-bottom: 50px;
+            background: rgba(0,0,0,0.8);
+            box-shadow: inset 0 0 15px var(--dim-neon);
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { 
+            border: 1px solid var(--neon); 
+            padding: 25px; 
+            background: rgba(0,0,0,0.7);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover { 
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,255,65,0.3);
+            background: rgba(0,255,65,0.05);
+        }
+
+        .card h3 { color: #fff; border-bottom: 1px solid var(--neon); padding-bottom: 10px; margin-top: 0; }
+        
+        .tag { font-size: 0.7rem; background: var(--neon); color: #000; padding: 2px 6px; margin-right: 5px; font-weight: bold; }
+
+        .contact-section { text-align: center; margin-top: 50px; border-top: 1px solid var(--neon); padding-top: 50px; }
+        
+        .contact-btn { 
+            display: inline-block; 
+            padding: 15px 40px; 
+            border: 2px solid var(--neon); 
+            color: var(--neon); 
+            text-decoration: none; 
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover { background: var(--neon); color: #000; box-shadow: 0 0 20px var(--neon); }
+
+        footer { text-align: center; padding: 40px; font-size: 0.7rem; color: #555; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="status-bar">SYSTEM: OPERATIONAL // NODE: GLOBAL_SEC_01 // ENCRYPTION: AES-256</div>
+    
+    <div class="hero">
         <h1>HEXASEC-CYBER</h1>
-        <p>Cybersecurity Vision 2028</p>
-        <div class="status">_SYSTEM_ACTIVE_READY</div>
+        <p class="glitch-text">DEPLOYING VISION 2028: SECURING THE FUTURE</p>
+        <div style="margin-top: 30px;">
+            <span class="tag">AI-READY</span>
+            <span class="tag">ZERO-TRUST</span>
+            <span class="tag">CLOUD-NATIVE</span>
+        </div>
     </div>
+
+    <div class="container">
+        <div class="mission-box">
+            <h2>> THE MISSION</h2>
+            <p>At HexaSec Cyber, we don't just respond to threats—we anticipate them. Our Vision 2028 framework focuses on the convergence of AI-driven defense, quantum-resistant encryption, and autonomous incident response. We provide the tactical edge needed in an era of hyper-connected vulnerabilities.</p>
+        </div>
+
+        <h2>> CORE SERVICE STACK</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>01. Red Teaming</h3>
+                <p>Full-scale offensive operations simulating real-world adversaries. We test your technical, physical, and human defenses to find the cracks before the hackers do.</p>
+                <ul>
+                    <li>Advanced Pentesting</li>
+                    <li>Social Engineering</li>
+                    <li>Exploit Development</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>02. Blue Team Defense</h3>
+                <p>Continuous monitoring and hardening. We deploy Zero-Trust architectures and advanced SIEM/SOAR solutions to ensure 100% visibility of your network assets.</p>
+                <ul>
+                    <li>24/7 Threat Hunting</li>
+                    <li>Network Hardening</li>
+                    <li>Endpoint Protection</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>03. Risk & Compliance</h3>
+                <p>Aligning your security posture with global standards. We ensure your data remains sovereign and compliant with ISO27001, GDPR, and NIST frameworks.</p>
+                <ul>
+                    <li>Security Audits</li>
+                    <li>Policy Drafting</li>
+                    <li>Crisis Management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>INITIALIZE CONSULTATION</h2>
+            <p>Ready to harden your digital infrastructure?</p>
+            <a href="mailto:admin@hexasec.cyber" class="contact-btn">ESTABLISH SECURE LINK</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 HEXASEC CYBER // ALL RIGHTS RESERVED // UNAUTHORIZED ACCESS IS PROHIBITED
+    </footer>
 </body>
 </html>
