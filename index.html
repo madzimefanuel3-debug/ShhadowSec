@@ -26,17 +26,7 @@
             font-size: 0.8rem; font-weight: bold; position: sticky; top: 0; z-index: 100;
         }
 
-        /* Top Navigation */
-        .top-nav {
-            display: flex; justify-content: flex-end; padding: 20px;
-            position: absolute; width: 100%; z-index: 1000;
-        }
-        .nav-link {
-            color: var(--neon); text-decoration: none; font-weight: bold;
-            border: 1px solid var(--neon); padding: 5px 15px; transition: 0.3s;
-        }
-        .nav-link:hover { background: var(--neon); color: #000; }
-
+        /* Hero styling */
         .hero { 
             height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; 
             text-align: center; border-bottom: 2px solid var(--neon); padding: 20px;
@@ -86,8 +76,10 @@
     
     <div class="status-bar">AUTHENTICATED: ADMIN_FANUEL // SESSION: ENCRYPTED // MISSION: VISION 2028</div>
 
-    <nav class="top-nav">
-        <a href="about.html" class="nav-link">PERSONNEL FILE (ABOUT)</a>
+    <nav style="display: flex; justify-content: center; gap: 20px; padding: 15px; background: rgba(0,0,0,0.9); border-bottom: 1px solid #00ff41; position: sticky; top: 0; z-index: 1001;">
+        <a href="index.html" style="color: #00ff41; text-decoration: none; font-weight: bold; border: 1px solid #00ff41; padding: 5px 15px;">[ DASHBOARD ]</a>
+        <a href="about.html" style="color: #00ff41; text-decoration: none; font-weight: bold; border: 1px solid #00ff41; padding: 5px 15px;">[ PERSONNEL ]</a>
+        <a href="services.html" style="color: #00ff41; text-decoration: none; font-weight: bold; border: 1px solid #00ff41; padding: 5px 15px;">[ SERVICES ]</a>
     </nav>
     
     <section class="hero">
