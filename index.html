@@ -26,6 +26,17 @@
             font-size: 0.8rem; font-weight: bold; position: sticky; top: 0; z-index: 100;
         }
 
+        /* Top Navigation */
+        .top-nav {
+            display: flex; justify-content: flex-end; padding: 20px;
+            position: absolute; width: 100%; z-index: 1000;
+        }
+        .nav-link {
+            color: var(--neon); text-decoration: none; font-weight: bold;
+            border: 1px solid var(--neon); padding: 5px 15px; transition: 0.3s;
+        }
+        .nav-link:hover { background: var(--neon); color: #000; }
+
         .hero { 
             height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; 
             text-align: center; border-bottom: 2px solid var(--neon); padding: 20px;
@@ -38,7 +49,7 @@
         
         .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
         .card { 
             border: 1px solid var(--neon); background: rgba(0,0,0,0.9);
@@ -49,12 +60,12 @@
 
         .card-image {
             height: 200px; width: 100%; object-fit: cover;
-            filter: grayscale(100%) brightness(60%);
+            filter: grayscale(100%) brightness(60%) sepia(100%) hue-rotate(90deg);
         }
 
         .card-content { padding: 25px; }
+        .card-content h3 { margin-top: 0; color: #fff; border-bottom: 1px solid var(--neon); padding-bottom: 5px; }
 
-        /* Contact Section Styles */
         .contact-box {
             margin-top: 80px; padding: 40px; border: 2px dashed var(--neon);
             text-align: center; background: rgba(0, 255, 65, 0.05);
@@ -72,7 +83,12 @@
 </head>
 <body>
     <canvas id="matrix-bg"></canvas>
-    <div class="status-bar">AUTHENTICATED: ADMIN_FANUEL // SESSION: ENCRYPTED // EMAIL_STATUS: LINKED</div>
+    
+    <div class="status-bar">AUTHENTICATED: ADMIN_FANUEL // SESSION: ENCRYPTED // MISSION: VISION 2028</div>
+
+    <nav class="top-nav">
+        <a href="about.html" class="nav-link">PERSONNEL FILE (ABOUT)</a>
+    </nav>
     
     <section class="hero">
         <h1>HEXASEC-CYBER</h1>
@@ -81,19 +97,29 @@
     </section>
 
     <div class="container">
+        <h2>> SERVICE MODULES</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000" class="card-image">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000" class="card-image" alt="Red Team">
                 <div class="card-content">
                     <h3>01. RED TEAMING</h3>
-                    <p>Advanced penetration testing and ethical hacking to uncover hidden weaknesses.</p>
+                    <p>Advanced penetration testing and ethical hacking to uncover hidden weaknesses before adversaries do.</p>
                 </div>
             </div>
+
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1000" class="card-image">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1000" class="card-image" alt="Blue Team">
                 <div class="card-content">
                     <h3>02. BLUE TEAMING</h3>
-                    <p>Proactive defense, network hardening, and 24/7 security monitoring.</p>
+                    <p>Proactive defense, network hardening, and 24/7 security monitoring for resilient infrastructure.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" class="card-image" alt="Intelligence">
+                <div class="card-content">
+                    <h3>03. INTELLIGENCE</h3>
+                    <p>Leveraging AI and global threat data to predict and neutralize threats at the edge of your network.</p>
                 </div>
             </div>
         </div>
